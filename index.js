@@ -17,12 +17,13 @@ function toggleActive(e) {
 
 // Function to add the 'pulse' class once on panel hover
 function addPulseOnce() {
+  console.log('test1');
   if (!this.classList.contains('pulse')) { // Check if the pulse animation hasn't been added yet
     this.classList.add('pulse');
-    // Remove the 'mouseover' listener to prevent repeating
-    this.removeEventListener('mouseover', addPulseOnce);
+    
     // Add 'mouseout' listener to remove pulse when mouse leaves
     this.addEventListener('mouseout', removePulseOnce);
+    
   }
 }
 
@@ -31,8 +32,6 @@ function removePulseOnce() {
   this.classList.remove('pulse');
   // Remove the 'mouseout' listener to avoid unnecessary removals
   this.removeEventListener('mouseout', removePulseOnce);
-  // Re-add 'mouseover' listener for future interactions
-  this.addEventListener('mouseover', addPulseOnce);
 }
 
 // Add 'mouseover' listener to trigger the pulse animation
