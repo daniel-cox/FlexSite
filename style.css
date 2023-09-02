@@ -25,6 +25,21 @@ html {
     display: flex;
   }
 
+  .panel::before {
+    content: "";
+    background-image:initial;
+    filter: blur(0); /* Initially, no blur */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transition: filter 0.5s; /* Smooth transition for the blur effect */
+  }
+
+  
+
   .panel {
     background: #6B0F9C;
     box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
@@ -44,13 +59,14 @@ html {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    position: relative;
   }
 
   .panel1 { background-image:url(https://guitar.com/wp-content/uploads/2021/10/Mark-Tremonti-1@1400x1050.jpg); }
   .panel2 { background-image:url(https://upload.wikimedia.org/wikipedia/commons/d/df/Dreamtheater_-_Wacken_Open_Air_2015-1619_%28cropped%29.jpg); }
-  .panel3 { background-image:url(https://m.media-amazon.com/images/M/MV5BM2I5YzM4NjQtNjZkMi00ZGZjLThkMjktYjVmNDIzODYwNzRhXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_FMjpg_UX1000_.jpg); }
+  .panel3 { background-image:url(https://townsquare.media/site/366/files/2023/06/attachment-pantera_dimebag_darrell.jpg?w=1080&q=75); }
   .panel4 { background-image:url(https://cdn-p.smehost.net/sites/7f9737f2506941499994d771a29ad47a/wp-content/uploads/2020/02/JCB_Periphery_2757.jpg); }
-  .panel5 { background-image:url(https://upload.wikimedia.org/wikipedia/commons/9/92/Black_Label_Society_-_Wacken_Open_Air_2015-1751.jpg); }
+  .panel5 { background-image:url(https://townsquare.media/site/366/files/2017/02/Zakk-Wylde-Ozzy-Osbourne.jpg?w=1200&h=0&zc=1&s=0&a=t&q=89); }
 
   /* Flex Items */
   .panel > * {
@@ -72,22 +88,29 @@ html {
     text-transform: uppercase;
     font-family: 'Amatic SC', cursive;
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-    font-size: 2em;
+    font-size: 18px;
   }
 
 
   .panel p:nth-child(2) {
-    font-size: 4em;
+    font-size: 3em;
   }
   .panel.pulse{
     flex: 1.3;
     transition: 1s;
-    font-size: 40px;
+    font-size: 30px;
   }
   
+  .panel.open::before {
+    filter: blur(5px); /* Blur effect when panel is open */
+  }
+
   .panel.open {
     flex: 5;
-    font-size: 40px;
+  }
+
+  .panel.open p{
+    padding:1.5em
   }
 
   @media only screen and (max-width: 600px) {
