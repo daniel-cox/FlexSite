@@ -3,9 +3,9 @@ const panels = document.querySelectorAll('.panel');
 const noPTag = document.querySelectorAll('p');
 const tremontiAudio = new Audio("/audio/Tremonti.mp3");
 const petrucciAudio = new Audio("/audio/Petrucci.mp3");
-const dimebagAudio = new Audio("/audio/Dimebag.mp3");
-const mishaAudio = new Audio("/audio/Misha.mp3"); // New audio element
-const zakkAudio = new Audio("/audio/Zakk.mp3"); // New audio element
+const dimebagAudio = new Audio("/audio/dimebag.mp3");
+const mishaAudio = new Audio("/audio/Misha.mp3"); 
+const zakkAudio = new Audio("/audio/Zakk.mp3"); 
 
 
 // Set the volume level for all audio (e.g., 0.3 for 30% volume)
